@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Manipulation</title>
+  </head>
+  <body>
+    <div id="String">
+      String =
+      "milkshakepizzachickenfriescokeburgerpizzasandwichOnionringsmilkshakepizza";
+    </div>
+    <div id="urutan"></div>
+
+    <script>
+      //   buat array kosong untuk menampung string
+      let arr = [];
+      let str =
+        "milkshakepizzachickenfriescokeburgerpizzasandwichOnionringsmilkshakepizza";
+      // pisahkan masing" string dengan function substring
+      let milkshake = str.substring(0, 9);
+      let pizza = str.substring(9, 14);
+      let chicken = str.substring(14, 21);
+      let fries = str.substring(21, 26);
+      let coke = str.substring(26, 30);
+      let burger = str.substring(30, 36);
+      let sandwich = str.substring(41, 49);
+      let onionrings = str.substring(49, 59);
+
+      // massukkan data yang telah di filter ke array
+      arr.push(
+        burger,
+        fries,
+        chicken,
+        pizza,
+        pizza,
+        pizza,
+        sandwich,
+        onionrings,
+        milkshake,
+        milkshake,
+        coke
+      );
+
+      //   looping arraynya
+      let loop = 'Result=" ';
+      arr.forEach((a) => {
+        loop += " " + setTheList(a);
+      });
+      // ambil id urutan dan massukan ke html
+      let urutan = document.querySelector("#urutan");
+      urutan.innerHTML = loop + ' "';
+
+      //   fungsi yg di tempelkan ke html
+      function setTheList(a) {
+        return `${a}`;
+      }
+    </script>
+  </body>
+</html>

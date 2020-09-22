@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Aplication</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+
+      #submit {
+        margin-left: 10px;
+      }
+
+      #result {
+        font-weight: bold;
+        font-family: "Times New Roman", Times, serif;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="inputUser">
+        <input type="text" name="input_usr" id="input_usr" />
+      </div>
+      <button type="submit" id="submit">PALINDROME CHECK</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+      // ambil tombol yg di gunakan untuk men submit
+      let tombol = document.querySelector("#submit");
+
+      // membuat even ketika di klik
+      tombol.addEventListener("click", function () {
+        // ambil id result & inputan
+        let result = document.querySelector("#result");
+        let input = document.querySelector("#input_usr").value;
+        // ubah inputan mejadi lowercase
+        let filterInput = input.toLowerCase();
+
+        // kalimat palindrome di simpan dalam arrays
+        const palindrome = [
+          "a nut for a jar of tuna.",
+          "al lets della call ed “stella.”",
+          "amore, roma.",
+          "borrow or rob?",
+          "king, are you glad you are king?",
+          "taco cat",
+          "was it a car or a cat i saw?",
+          "oozy rat in a sanitary zoo.",
+        ];
+
+        // buat kondisi apakah di palindrome ada yang sama dengan inputan
+        // jika bernilai true isi html dengan palindrome,dst.
+        if (palindrome.includes(filterInput)) {
+          result.innerHTML = "Palindrome";
+        } else {
+          result.innerHTML = "Bukan Palindrome";
+        }
+      });
+    </script>
+  </body>
+</html>
